@@ -212,7 +212,7 @@ public class FXMLController implements Initializable {
             }
             
             //fájlba kiírni
-            /*
+            
             try (PrintStream ps = new PrintStream("elszamolas.txt")){
                 String csg = "A(z) " + currentTable + ". számú asztal számlája\n";
                 ps.append(csg);
@@ -226,7 +226,7 @@ public class FXMLController implements Initializable {
                 System.err.println("Hiba az állomány megnyitásakor: " + ex.getMessage());
                 System.exit(1);
             }
-            */
+            
             //alarm ablakba kiírni a tételeket
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Fizetés");
