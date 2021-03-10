@@ -45,4 +45,12 @@ public class Food {
         return quantity + " x " + name + ", " + price + "Ft";
     }
     
+    public static Food scannedFood(FoodDataReader fdr){
+        int price,quantity;
+        String name;
+        price = fdr.getPrice();
+        name=fdr.getName();
+        quantity=fdr.getQuantity();
+        return new Food(quantity, name, price);
+    }
 }

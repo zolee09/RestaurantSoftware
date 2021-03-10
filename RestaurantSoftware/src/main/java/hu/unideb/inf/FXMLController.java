@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -147,7 +148,7 @@ public class FXMLController implements Initializable {
     }
 
     @FXML
-    private void handleButtonNumber4Action(ActionEvent event) {
+    public void handleButtonNumber4Action(ActionEvent event) {
         number = 4;
         System.out.println(number);
     }
@@ -175,7 +176,7 @@ public class FXMLController implements Initializable {
         number = 2;
         System.out.println(number);
     }
-
+    
     @FXML
     private void handleButtonNumber9Action(ActionEvent event) {
         number = 9;
@@ -371,4 +372,6 @@ public class FXMLController implements Initializable {
         //tableTemp = null;
         //tempFood = null;
     }
+    
+    
 }

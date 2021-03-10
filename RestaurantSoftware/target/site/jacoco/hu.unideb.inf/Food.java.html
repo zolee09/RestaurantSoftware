@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Food.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RestaurantSoftware</a> &gt; <a href="index.source.html" class="el_package">hu.unideb.inf</a> &gt; <span class="el_source">Food.java</span></div><h1>Food.java</h1><pre class="source lang-java linenums">
+package hu.unideb.inf;
+
+public class Food {
+    private int quantity;
+    private String name;
+    private int price;
+
+<span class="fc" id="L9">    public Food(int quantity, String name, int price) {</span>
+<span class="fc" id="L10">        this.quantity = quantity;</span>
+<span class="fc" id="L11">        this.name = name;</span>
+<span class="fc" id="L12">        this.price = price;</span>
+<span class="fc" id="L13">    }</span>
+
+<span class="fc" id="L15">    public Food() {</span>
+        
+<span class="fc" id="L17">    }</span>
+
+    public int getQuantity() {
+<span class="fc" id="L20">        return quantity;</span>
+    }
+
+    public void setQuantity(int quantity) {
+<span class="fc" id="L24">        this.quantity = quantity;</span>
+<span class="fc" id="L25">    }</span>
+
+    public String getName() {
+<span class="fc" id="L28">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L32">        this.name = name;</span>
+<span class="fc" id="L33">    }</span>
+
+    public int getPrice() {
+<span class="fc" id="L36">        return price;</span>
+    }
+
+    public void setPrice(int price) {
+<span class="fc" id="L40">        this.price = price;</span>
+<span class="fc" id="L41">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L45">        return quantity + &quot; x &quot; + name + &quot;, &quot; + price + &quot;Ft&quot;;</span>
+    }
+    
+    public static Food scannedFood(FoodDataReader fdr){
+        int price,quantity;
+        String name;
+<span class="fc" id="L51">        price = fdr.getPrice();</span>
+<span class="fc" id="L52">        name=fdr.getName();</span>
+<span class="fc" id="L53">        quantity=fdr.getQuantity();</span>
+<span class="fc" id="L54">        return new Food(quantity, name, price);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
