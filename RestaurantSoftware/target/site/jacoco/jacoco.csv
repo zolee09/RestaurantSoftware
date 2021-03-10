@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 RestaurantSoftware,hu.unideb.inf,Food,0,60,0,0,0,21,0,10,0,10
-RestaurantSoftware,hu.unideb.inf,FXMLController,637,0,32,0,152,0,48,0,32,0
+RestaurantSoftware,hu.unideb.inf,FXMLController,665,0,32,0,162,0,48,0,32,0
 RestaurantSoftware,hu.unideb.inf,MainApp,32,0,0,0,10,0,3,0,3,0
 RestaurantSoftware,hu.unideb.inf,Table,12,64,0,2,5,12,2,6,2,5

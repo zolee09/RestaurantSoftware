@@ -271,13 +271,10 @@ public class FXMLController implements Initializable {
                 //ha találunk egyező asztalt
                 if (tb.getTableNumber() == currentTable) {
                     index = table.indexOf(tb);
-                    tableEquals = true;
+                    orderLabel.setText(table.get(index).toString());
                 }
             }
         }
-        orderLabel.setText(table.get(index).toString());
-        
-        tableEquals = false;
         number = 0;
     }
     public void handleButtonFunction(String foodName, int foodPrice) {
@@ -291,11 +288,13 @@ public class FXMLController implements Initializable {
         //ha nem választunk mennyiséget akkor automatikusan 1
         if (number == 0) number = 1;
         food.add(new Food(number, foodName, foodPrice));
+        System.out.println(food.toString());
         
         //ha nem volt egy asztal sem létrehozunk egyet
         if (table.size() == 0) {
             table.add(new Table(currentTable, food));
         } else {
+            indexOfTable = table.size();
             for (Table tb : table) {
                 //ha találunk egyező asztalt
                 if (tb.getTableNumber() == currentTable) {
@@ -354,13 +353,8 @@ public class FXMLController implements Initializable {
         }
         
         //Megjelenítés
-        if (tableEquals) {
-            orderLabel.setText(table.get(indexOfTable).toString());
-            System.out.println(table.get(indexOfTable).toString());
-        } else {
-            orderLabel.setText(table.get(table.size()-1).toString());
-            System.out.println(table.get(table.size()-1).toString());
-        }
+        orderLabel.setText(table.get(indexOfTable).toString());
+        System.out.println(table.get(indexOfTable).toString());
         
         //mindent lenullázunk
         number = 0;
