@@ -1,0 +1,51 @@
+.button {
+    -fx-font-weight: bold;
+    -fx-background-radius: 15px;
+}
+
+.label {
+    -fx-font-weight: bold;
+}
+
+.root {
+    -fx-background-color: lightblue;
+    
+}
+
+#button0{
+    -fx-background-color: #7FFFD4;
+}
+
+#button1{
+    -fx-background-color: #F0FFFF;
+}
+
+#button2{
+    -fx-background-color: #F5F5DC;
+}
+
+#button3{
+    -fx-background-color: #5F9EA0;
+}
+
+#num{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#deleteButton{
+    -fx-background-color: red;
+}
+
+#payButton{
+    -fx-background-color: green;
+}
+
+#orderButton{
+    -fx-background-color: lightseagreen;
+}
+
+#orderLabel{
+    -fx-background-radius: 15px;
+    -fx-background-color: #A9A9A9;
+}

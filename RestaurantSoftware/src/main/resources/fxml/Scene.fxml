@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="330.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.FXMLController">
+    <children>
+       <Button fx:id="button0" layoutX="39.0" layoutY="165.0" onAction="#handleButton00Action" prefHeight="25.0" prefWidth="110.0" text="Húsleves" />
+      <Button fx:id="button0" layoutX="39.0" layoutY="207.0" onAction="#handleButton01Action" prefHeight="25.0" prefWidth="110.0" text="Bableves" />
+      <Button fx:id="button0" layoutX="39.0" layoutY="247.0" onAction="#handleButton02Action" prefHeight="25.0" prefWidth="110.0" text="Gyümölcsleves" />
+      <Button fx:id="button0" layoutX="39.0" layoutY="284.0" onAction="#handleButton03Action" prefHeight="25.0" prefWidth="110.0" text="Paradicsomleves" />
+      <Button fx:id="button1" layoutX="174.0" layoutY="165.0" onAction="#handleButton10Action" prefHeight="25.0" prefWidth="110.0" text="Marhapörkölt" />
+      <Button fx:id="button1" layoutX="174.0" layoutY="207.0" onAction="#handleButton11Action" prefHeight="25.0" prefWidth="110.0" text="Túróstészta" />
+      <Button fx:id="button1" layoutX="174.0" layoutY="247.0" onAction="#handleButton12Action" prefHeight="25.0" prefWidth="110.0" text="Töltöttkáposzta" />
+      <Button fx:id="button1" layoutX="174.0" layoutY="284.0" onAction="#handleButton13Action" prefHeight="25.0" prefWidth="110.0" text="Rántotthús" />
+      <Button fx:id="button2" layoutX="305.0" layoutY="165.0" onAction="#handleButton20Action" prefHeight="25.0" prefWidth="110.0" text="Palacsinta" />
+      <Button fx:id="button2" layoutX="305.0" layoutY="207.0" onAction="#handleButton21Action" prefHeight="25.0" prefWidth="110.0" text="Mákosguba" />
+      <Button fx:id="button2" layoutX="305.0" layoutY="247.0" onAction="#handleButton22Action" prefHeight="25.0" prefWidth="110.0" text="Aranygaluska" />
+      <Button fx:id="button2" layoutX="305.0" layoutY="284.0" onAction="#handleButton23Action" prefHeight="25.0" prefWidth="110.0" text="Torta" />
+      <Button fx:id="button3" layoutX="432.0" layoutY="165.0" onAction="#handleButton30Action" prefHeight="25.0" prefWidth="110.0" text="Coca-cola" />
+      <Button fx:id="button3" layoutX="432.0" layoutY="207.0" onAction="#handleButton31Action" prefHeight="25.0" prefWidth="110.0" text="Pepsi" />
+      <Button fx:id="button3" layoutX="432.0" layoutY="247.0" onAction="#handleButton32Action" prefHeight="25.0" prefWidth="110.0" text="Ásványvíz" />
+      <Button fx:id="button3" layoutX="432.0" layoutY="284.0" onAction="#handleButton33Action" prefHeight="25.0" prefWidth="110.0" text="Zöldtea" />
+      <Button fx:id="num" layoutX="591.0" layoutY="166.0" onAction="#handleButtonNumber7Action" prefHeight="25.0" prefWidth="25.0" text="7" />
+      <Button fx:id="num" layoutX="591.0" layoutY="208.0" onAction="#handleButtonNumber4Action" prefHeight="25.0" prefWidth="25.0" text="4" />
+      <Button fx:id="num" layoutX="591.0" layoutY="248.0" onAction="#handleButtonNumber1Action" prefHeight="25.0" prefWidth="25.0" text="1" />
+      <Button fx:id="num" layoutX="631.0" layoutY="167.0" onAction="#handleButtonNumber8Action" prefHeight="25.0" prefWidth="25.0" text="8" />
+      <Button fx:id="num" layoutX="631.0" layoutY="208.0" onAction="#handleButtonNumber5Action" prefHeight="25.0" prefWidth="25.0" text="5" />
+      <Button fx:id="num" layoutX="631.0" layoutY="248.0" onAction="#handleButtonNumber2Action" prefHeight="25.0" prefWidth="25.0" text="2" />
+      <Button fx:id="num" layoutX="670.0" layoutY="166.0" onAction="#handleButtonNumber9Action" prefHeight="25.0" prefWidth="25.0" text="9" />
+      <Button fx:id="num" layoutX="670.0" layoutY="208.0" onAction="#handleButtonNumber6Action" prefHeight="25.0" prefWidth="25.0" text="6" />
+      <Button fx:id="num" layoutX="670.0" layoutY="248.0" onAction="#handleButtonNumber3Action" prefHeight="25.0" prefWidth="25.0" text="3" />
+      <Button fx:id="num" layoutX="670.0" layoutY="284.0" onAction="#handleButtonNumber0Action" prefHeight="25.0" prefWidth="25.0" text="0" />
+      <Button fx:id="payButton" layoutX="583.0" layoutY="25.0" onAction="#handleButtonPayAction" prefHeight="37.0" prefWidth="121.0" text="Fizet" />
+      <Button fx:id="deleteButton" layoutX="583.0" layoutY="81.0" onAction="#handleButtonDeleteAction" prefHeight="37.0" prefWidth="121.0" text="Töröl" />
+      <Button fx:id="orderButton" layoutX="590.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonOrderAction" prefHeight="25.0" prefWidth="67.0" text="Asztal" />
+      <Label layoutX="458.0" layoutY="26.0" text="Asztal">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="tableOutWrite" alignment="CENTER" layoutX="467.0" layoutY="82.0" prefHeight="35.0" prefWidth="45.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="orderLabel" alignment="CENTER" layoutX="39.0" layoutY="26.0" prefHeight="126.0" prefWidth="375.0" text="" />
+    </children>
+</AnchorPane>
