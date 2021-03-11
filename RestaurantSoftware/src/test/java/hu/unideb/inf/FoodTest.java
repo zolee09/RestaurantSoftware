@@ -53,23 +53,23 @@ public class FoodTest {
     
     @Test
     public void testSetQuantity() {
-        Food food = new Food(1, "Name", 1);
-        food.setQuantity(1);
-        assertEquals(1, food.getQuantity());
+        //Food food = new Food(1, "Name", 1);
+        underTest2.setQuantity(10);
+        assertEquals(10, underTest2.getQuantity());
     }
     
     @Test
     public void testSetName() {
-        Food food = new Food(1, "Name", 1);
-        food.setName("Test");
-        assertEquals("Test", food.getName());
+        //Food food = new Food(1, "Name", 1);
+        underTest1.setName("Test");
+        assertEquals("Test", underTest1.getName());
 
     }
     @Test
     public void testSetPrice() {
-        Food food = new Food();
-        food.setPrice(1);
-        assertEquals(1, food.getPrice());
+        //Food food = new Food();
+        underTest2.setPrice(1);
+        assertEquals(1, underTest2.getPrice());
     }
 
 

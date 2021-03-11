@@ -272,102 +272,100 @@ import javafx.scene.layout.AnchorPane;
 <span class="nc bnc" id="L272" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
 <span class="nc" id="L273">                    index = table.indexOf(tb);</span>
 <span class="nc" id="L274">                    orderLabel.setText(table.get(index).toString());</span>
-                    //tableEquals = true;
                 }
-<span class="nc" id="L277">            }</span>
+<span class="nc" id="L276">            }</span>
         }
-        //tableEquals = false;
-<span class="nc" id="L280">        number = 0;</span>
-<span class="nc" id="L281">    }</span>
+<span class="nc" id="L278">        number = 0;</span>
+<span class="nc" id="L279">    }</span>
     public void handleButtonFunction(String foodName, int foodPrice) {
         
-<span class="nc" id="L284">        int sum = 0;</span>
-<span class="nc" id="L285">        Food foodTemp = null;</span>
-<span class="nc" id="L286">        Table tableTemp = null;</span>
-<span class="nc" id="L287">        List&lt;Food&gt; food = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L288">        List&lt;Food&gt; tempFood = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L282">        int sum = 0;</span>
+<span class="nc" id="L283">        Food foodTemp = null;</span>
+<span class="nc" id="L284">        Table tableTemp = null;</span>
+<span class="nc" id="L285">        List&lt;Food&gt; food = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L286">        List&lt;Food&gt; tempFood = new ArrayList&lt;&gt;();</span>
         
         //ha nem választunk mennyiséget akkor automatikusan 1
-<span class="nc bnc" id="L291" title="All 2 branches missed.">        if (number == 0) number = 1;</span>
-<span class="nc" id="L292">        food.add(new Food(number, foodName, foodPrice));</span>
-<span class="nc" id="L293">        System.out.println(food.toString());</span>
+<span class="nc bnc" id="L289" title="All 2 branches missed.">        if (number == 0) number = 1;</span>
+<span class="nc" id="L290">        food.add(new Food(number, foodName, foodPrice));</span>
+<span class="nc" id="L291">        System.out.println(food.toString());</span>
         
         //ha nem volt egy asztal sem létrehozunk egyet
-<span class="nc bnc" id="L296" title="All 2 branches missed.">        if (table.size() == 0) {</span>
-<span class="nc" id="L297">            table.add(new Table(currentTable, food));</span>
+<span class="nc bnc" id="L294" title="All 2 branches missed.">        if (table.size() == 0) {</span>
+<span class="nc" id="L295">            table.add(new Table(currentTable, food));</span>
         } else {
-<span class="nc" id="L299">            indexOfTable = table.size();</span>
-<span class="nc bnc" id="L300" title="All 2 branches missed.">            for (Table tb : table) {</span>
+<span class="nc" id="L297">            indexOfTable = table.size();</span>
+<span class="nc bnc" id="L298" title="All 2 branches missed.">            for (Table tb : table) {</span>
                 //ha találunk egyező asztalt
-<span class="nc bnc" id="L302" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
-<span class="nc" id="L303">                    tableEquals = true;</span>
-<span class="nc" id="L304">                    indexOfTable = table.indexOf(tb);</span>
-<span class="nc" id="L305">                    tempFood = tb.getFoods();</span>
+<span class="nc bnc" id="L300" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
+<span class="nc" id="L301">                    tableEquals = true;</span>
+<span class="nc" id="L302">                    indexOfTable = table.indexOf(tb);</span>
+<span class="nc" id="L303">                    tempFood = tb.getFoods();</span>
                 }
-<span class="nc" id="L307">            }</span>
+<span class="nc" id="L305">            }</span>
             //ha már találtunk egyező asztalt (Asztal gombban kiértékelve)
-<span class="nc bnc" id="L309" title="All 2 branches missed.">            if (tableEquals) {</span>
+<span class="nc bnc" id="L307" title="All 2 branches missed.">            if (tableEquals) {</span>
                 //körbejárjuk az adott asztal ételeit
-<span class="nc bnc" id="L311" title="All 2 branches missed.">                for (Food foo : tempFood) {</span>
+<span class="nc bnc" id="L309" title="All 2 branches missed.">                for (Food foo : tempFood) {</span>
                     //megvizsgáljuk hogy volt e már rendelve a kért étel erre az asztalra
-<span class="nc bnc" id="L313" title="All 2 branches missed.">                    if (foo.getName().equals(foodName)) {</span>
-<span class="nc" id="L314">                        foodEquals = true;</span>
-<span class="nc" id="L315">                        indexOfFood = tempFood.indexOf(foo);</span>
+<span class="nc bnc" id="L311" title="All 2 branches missed.">                    if (foo.getName().equals(foodName)) {</span>
+<span class="nc" id="L312">                        foodEquals = true;</span>
+<span class="nc" id="L313">                        indexOfFood = tempFood.indexOf(foo);</span>
                         //másolatot készítünk az egyezett ételről
-<span class="nc" id="L317">                        foodTemp = foo;</span>
+<span class="nc" id="L315">                        foodTemp = foo;</span>
                     }
-<span class="nc" id="L319">                }</span>
+<span class="nc" id="L317">                }</span>
                 //ha volt már a listában a kért étel
-<span class="nc bnc" id="L321" title="All 2 branches missed.">                if (foodEquals) {</span>
+<span class="nc bnc" id="L319" title="All 2 branches missed.">                if (foodEquals) {</span>
                     //összegezzük a most kiválasztott mennyiségett az eddigi mennyiséggel
-<span class="nc" id="L323">                    sum = number + table.get(indexOfTable).getFoods().get(indexOfFood).getQuantity();</span>
+<span class="nc" id="L321">                    sum = number + table.get(indexOfTable).getFoods().get(indexOfFood).getQuantity();</span>
                     //lemásoljuk a kiválaszott ételt )előtte megtettük
                     //foodTemp = table.get(indexOfTable).getFoods().get(indexOfFood);
                     //eltávolítjuk a kiválasztott ételt egy ezelőtt használt étellista másolatból
-<span class="nc" id="L327">                    tempFood.remove(foodTemp);</span>
+<span class="nc" id="L325">                    tempFood.remove(foodTemp);</span>
                     //hozzáadjuk az ételt, az új darabértékkel ehhez a másolt listához
-<span class="nc" id="L329">                    tempFood.add(new Food(sum, foodName, foodPrice));</span>
+<span class="nc" id="L327">                    tempFood.add(new Food(sum, foodName, foodPrice));</span>
                     //készítünk egy asztal lista másolatot az adott asztalról
-<span class="nc" id="L331">                    tableTemp = table.get(indexOfTable);</span>
+<span class="nc" id="L329">                    tableTemp = table.get(indexOfTable);</span>
                     //eltávolítjuk ideiglenesen az adott asztalt
-<span class="nc" id="L333">                    table.remove(tableTemp);</span>
+<span class="nc" id="L331">                    table.remove(tableTemp);</span>
                     //készítünk egy új asztalt a meglévő asztalszámmal és az új étellistával
-<span class="nc" id="L335">                    tableTemp = new Table(currentTable, tempFood);</span>
+<span class="nc" id="L333">                    tableTemp = new Table(currentTable, tempFood);</span>
                     //hozzáadjuk az asztallistához az &quot;újraformázott&quot; asztalt
-<span class="nc" id="L337">                    table.add(tableTemp);</span>
+<span class="nc" id="L335">                    table.add(tableTemp);</span>
                 } else {
                     //ha nem volt étel egyezés
                     //hozzáadjuk az ételt, az új darabértékkel ehhez a másolt listához
-<span class="nc" id="L341">                    tempFood.add(new Food(number, foodName, foodPrice));</span>
+<span class="nc" id="L339">                    tempFood.add(new Food(number, foodName, foodPrice));</span>
                     //készítünk egy asztal lista másolatot az adott asztalról
-<span class="nc" id="L343">                    tableTemp = table.get(indexOfTable);</span>
+<span class="nc" id="L341">                    tableTemp = table.get(indexOfTable);</span>
                     //eltávolítjuk ideiglenesen az adott asztalt
-<span class="nc" id="L345">                    table.remove(tableTemp);</span>
+<span class="nc" id="L343">                    table.remove(tableTemp);</span>
                     //készítünk egy új asztalt a meglévő asztalszámmal és az új étellistával
-<span class="nc" id="L347">                    tableTemp = new Table(currentTable, tempFood);</span>
+<span class="nc" id="L345">                    tableTemp = new Table(currentTable, tempFood);</span>
                     //hozzáadjuk az asztallistához az &quot;újraformázott&quot; asztalt
-<span class="nc" id="L349">                    table.add(tableTemp);</span>
+<span class="nc" id="L347">                    table.add(tableTemp);</span>
                 }
             } else {
                 //ha nem volt asztal egyezés létrehozunk egy új asztalt a megadott étellel
-<span class="nc" id="L353">                table.add(new Table(currentTable, food));</span>
+<span class="nc" id="L351">                table.add(new Table(currentTable, food));</span>
             }
         }
         
         //Megjelenítés
-<span class="nc" id="L358">        orderLabel.setText(table.get(indexOfTable).toString());</span>
-<span class="nc" id="L359">        System.out.println(table.get(indexOfTable).toString());</span>
+<span class="nc" id="L356">        orderLabel.setText(table.get(indexOfTable).toString());</span>
+<span class="nc" id="L357">        System.out.println(table.get(indexOfTable).toString());</span>
         
         //mindent lenullázunk
-<span class="nc" id="L362">        number = 0;</span>
+<span class="nc" id="L360">        number = 0;</span>
+<span class="nc" id="L361">        indexOfTable = 0;</span>
+<span class="nc" id="L362">        indexOfFood = 0;</span>
 <span class="nc" id="L363">        indexOfTable = 0;</span>
-<span class="nc" id="L364">        indexOfFood = 0;</span>
-<span class="nc" id="L365">        indexOfTable = 0;</span>
-<span class="nc" id="L366">        tableEquals = false;</span>
-<span class="nc" id="L367">        foodEquals = false;</span>
+<span class="nc" id="L364">        tableEquals = false;</span>
+<span class="nc" id="L365">        foodEquals = false;</span>
         //tableTemp = null;
         //tempFood = null;
-<span class="nc" id="L370">    }</span>
+<span class="nc" id="L368">    }</span>
     
     
 }

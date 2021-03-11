@@ -31,11 +31,11 @@ public class TableTest {
     @Test
     public void testToString2() {
         ArrayList<Food> foodList = new ArrayList<Food>();
-        foodList.add(new Food(1, "Name", 1));
+        foodList.add(new Food(3, "Palacsinta", 299));
 
         Table table = new Table(10);
         table.setFoods(foodList);
-        assertEquals("1 x Name: 1Ft\n", table.toString());
+        assertEquals("3 x Palacsinta: 299Ft\n", table.toString());
     }
 }
 

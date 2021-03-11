@@ -1,35 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hu.unideb.inf;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.input.MouseEvent;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import static org.mockito.BDDMockito.given;
+
+
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import org.mockito.MockitoAnnotations;
 
 
-public class FXMLControllerTest {
-    
+public class FXMLControllerTest extends Application {
     @BeforeAll
     public static void setUpClass() {
     }
@@ -40,19 +35,64 @@ public class FXMLControllerTest {
     
     @BeforeEach
     public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-        
+
     }
 
-    @Test
-    public void testItCanWriteATest() {
-        
+    @Override
+    public void start(Stage stage) throws IOException {
+// Create the FXMLLoader
+        FXMLLoader loader = new FXMLLoader();
+// Path to the FXML File
+        String fxmlDocPath = "E://gitprojekt//RestaurantSoftware-master//RestaurantSoftware//src//main//resources//fxml";
+        FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
+// Create the Pane and all Details
+        VBox root = (VBox) loader.load(fxmlStream);
+// Create the Scene
+        Scene scene = new Scene(root,300,300);
+// Set the Scene to the Stage
+        stage.setScene(scene);
+// Set the Title to the Stage
+        stage.setTitle("A simple FXML Example");
+// Display the Stage
+        stage.show();
+    }
+
+
+
+    public FXMLControllerTest() {
     }
     
-   
+    
+
+
+    /**
+     * Test of initialize method, of class FXMLController.
+     */
+    @Test
+    public void testInitialize() {
+        System.out.println("initialize");
+        URL url = null;
+        ResourceBundle rb = null;
+        FXMLController instance = new FXMLController();
+        instance.initialize(url, rb);
+
+    }
+
+    /**
+     * Test of handleButtonNumber4Action method, of class FXMLController.
+     * @param e
+     */
+    @Test
+    public void testHandleButtonNumber4Action() {
+        System.out.println("handleButtonNumber4Action");
+        ActionEvent event=null;
+        int number=0;
+        FXMLController instance = new FXMLController();
+        instance.handleButtonNumber4Action(event);
+        assertEquals(4,number);
+
+
+    }
     @Test
     public void testHandleButtonFunctionWhenNumberIs0() {
         String foodName = "Palacsinta";
@@ -60,17 +100,19 @@ public class FXMLControllerTest {
         int number = 0;
         FXMLController instance = new FXMLController();
         instance.handleButtonFunction(foodName, foodPrice);
-        assertEquals(1,number);
-        
+        assertEquals(1, number);
     }
-    
+    /**
+     * Test of handleButtonFunction method, of class FXMLController.
+     */
     @Test
-    public void test() {
-        int number = 0;
-        ActionEvent ae = new ActionEvent();
+    public void testHandleButtonFunction() {
+        System.out.println("handleButtonFunction");
+        String foodName = "alma";
+        int foodPrice = 1;
         FXMLController instance = new FXMLController();
-        instance.handleButtonNumber4Action(ae);
-        assertEquals(4, number);
+        instance.handleButtonFunction(foodName, foodPrice);
+
     }
-    
+
 }
