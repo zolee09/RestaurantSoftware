@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hu.unideb.inf.FoodTest" time="1.127" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hu.unideb.inf.FXMLControllerTest" time="0" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -62,8 +62,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="runfx.args" value="-jar &quot;${project.build.directory}/${project.build.finalName}.jar&quot; "/>
   </properties>
-  <testcase name="testToString" classname="hu.unideb.inf.FoodTest" time="1.061"/>
-  <testcase name="testSetQuantity" classname="hu.unideb.inf.FoodTest" time="0.007"/>
-  <testcase name="testSetName" classname="hu.unideb.inf.FoodTest" time="0.008"/>
-  <testcase name="testSetPrice" classname="hu.unideb.inf.FoodTest" time="0.006"/>
+  <testcase name="empty" classname="hu.unideb.inf.FXMLControllerTest" time="0"/>
 </testsuite>
