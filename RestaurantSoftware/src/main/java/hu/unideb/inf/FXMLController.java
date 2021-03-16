@@ -1,6 +1,7 @@
 
 package hu.unideb.inf;
 
+import com.sun.source.doctree.SinceTree;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.net.URL;
@@ -8,15 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class FXMLController implements Initializable {
@@ -26,9 +25,13 @@ public class FXMLController implements Initializable {
     private int indexOfTable;
     private int indexOfFood;
     private int currentTable;
+    private boolean changeButtonPushed = false;
+    private boolean changeButtonDeletePushed = false;
     private boolean tableEquals = false;
     private boolean foodEquals = false;
     List<Table> table = new ArrayList<>();
+    List<Food> changedFood = new ArrayList<>();
+    
     
 
     @FXML
@@ -37,8 +40,6 @@ public class FXMLController implements Initializable {
     private Label orderLabel;
     @FXML
     private Label tableOutWrite;
-    @FXML
-    private ScrollPane scrollText;
     @FXML
     private Button button0;
     @FXML
@@ -57,7 +58,31 @@ public class FXMLController implements Initializable {
     private Button orderButton;
     @FXML
     private Button changer;
-   
+    @FXML
+    private Label numberOutWrite;
+    @FXML
+    private TextField nameInput;
+    @FXML
+    private TextField priceInput;
+    @FXML
+    private Button changeButton00;
+    @FXML
+    private Button changeButton10;
+    @FXML
+    private Button changeButton20;
+    @FXML
+    private Button changeButton30;
+    @FXML
+    private Button changeButton01;
+    @FXML
+    private Button changeButton11;
+    @FXML
+    private Button changeButton21;
+    @FXML
+    private Button changeButton31;
+    @FXML
+    private Button changeButtonDelete;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -145,95 +170,173 @@ public class FXMLController implements Initializable {
     
     @FXML
     private void changeButton00(ActionEvent event) {
-        
+        int changeButtonNumber = 0;
+        if (changeButtonDeletePushed) {
+            changeButton00.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton00.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton01(ActionEvent event) {
-        
+        int changeButtonNumber = 1;
+        if (changeButtonDeletePushed) {
+            changeButton01.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton01.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton10(ActionEvent event) {
-        
+        int changeButtonNumber = 2;
+        if (changeButtonDeletePushed) {
+            changeButton10.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton10.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton11(ActionEvent event) {
-        
+        int changeButtonNumber = 3;
+        if (changeButtonDeletePushed) {
+            changeButton11.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton11.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton20(ActionEvent event) {
-        
+        int changeButtonNumber = 4;
+        if (changeButtonDeletePushed) {
+            changeButton20.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton20.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton21(ActionEvent event) {
-        
+        int changeButtonNumber = 5;
+        if (changeButtonDeletePushed) {
+            changeButton21.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton21.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton30(ActionEvent event) {
-        
+        int changeButtonNumber = 6;
+        if (changeButtonDeletePushed) {
+            changeButton30.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton30.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
     @FXML
     private void changeButton31(ActionEvent event) {
-        
+        int changeButtonNumber = 7;
+        if (changeButtonDeletePushed) {
+            changeButton31.setText("");
+            changedFood.get(changeButtonNumber).setQuantity(0);
+            changeButtonDeletePushed = false;
+        }
+        else {
+            changeButtonFunction(changeButtonNumber);
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                changeButton31.setText(changedFood.get(changeButtonNumber).getName());
+            }
+        }
     }
 
     @FXML
     private void handleButtonNumber7Action(ActionEvent event) {
-        number = 7;
-        System.out.println(number);
+        numberButtonFunction(7);
     }
 
     @FXML
     public void handleButtonNumber4Action(ActionEvent event) {
-        number = 4;
-        System.out.println(number);
+        numberButtonFunction(4);
     }
 
     @FXML
     private void handleButtonNumber1Action(ActionEvent event) {
-        number = 1;
-        System.out.println(number);
+        numberButtonFunction(1);
     }
 
     @FXML
     private void handleButtonNumber8Action(ActionEvent event) {
-        number = 8;
-        System.out.println(number);
+        numberButtonFunction(8);
     }
 
     @FXML
     private void handleButtonNumber5Action(ActionEvent event) {
-        number = 5;
-        System.out.println(number);
+        numberButtonFunction(5);
     }
 
     @FXML
     private void handleButtonNumber2Action(ActionEvent event) {
-        number = 2;
-        System.out.println(number);
+        numberButtonFunction(2);
     }
     
     @FXML
     private void handleButtonNumber9Action(ActionEvent event) {
-        number = 9;
-        System.out.println(number);
+        numberButtonFunction(9);
     }
 
     @FXML
     private void handleButtonNumber6Action(ActionEvent event) {
-        number = 6;
-        System.out.println(number);
+        numberButtonFunction(6);
     }
 
     @FXML
     private void handleButtonNumber3Action(ActionEvent event) {
-        number = 3;
-        System.out.println(number);
+        numberButtonFunction(3);
     }
 
     @FXML
     private void handleButtonNumber0Action(ActionEvent event) {
-        number = 0;
-        System.out.println(number);
+        numberButtonFunction(0);
     }
 
     @FXML
@@ -281,6 +384,7 @@ public class FXMLController implements Initializable {
             if (number == 0){
                 table.get(index).foods.remove(table.get(index).foods.size()-1);
             } else {
+                numberOutWrite.setText("");
                 number = 0;
             }
             orderLabel.setText(table.get(index).toString());
@@ -310,12 +414,70 @@ public class FXMLController implements Initializable {
                 }
             }
         }
+        numberOutWrite.setText("");
         number = 0;
     }
     
     @FXML
     private void changerButton (ActionEvent event) {
+        if (changedFood.isEmpty()) {
+            for (int i = 0; i < 8; i++) {
+                changedFood.add(new Food(0, "", 0));
+            }
+        }
+        changeButtonPushed = true;
+    }
+    
+    @FXML
+    private void changeButtonDelete(ActionEvent event) {
+        changeButtonDeletePushed = true;
+    }
+    
+    public void changeButtonFunction (int changeButtonNumber) {
+        //ha a módosító gomb le van nyomva
+        if (changeButtonPushed) {
+            //ha nem üresek az input mezők
+            if (!nameInput.getText().isEmpty() && !priceInput.getText().isEmpty()) {
+                String name = nameInput.getText();
+                int price = Integer.parseInt(priceInput.getText());
+                Food temp = new Food(1, name, price);
+                //kicseréljük a már létrehozott lista adott elemét
+                changedFood.set(changeButtonNumber, temp);
+                System.out.println(changedFood.get(changeButtonNumber).toString());
+            }
+            else {
+                System.out.println("Adjon meg értéket mindkét helyre");
+            }
+            nameInput.setText("");
+            priceInput.setText("");
+            changeButtonPushed = false;
+        }
+        else {
+            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {
+                handleButtonFunction(changedFood.get(changeButtonNumber).getName(), changedFood.get(changeButtonNumber).getPrice());
+            }
+        }
         
+    }
+    
+    public void numberButtonFunction(int num) {
+        String temp;
+        if (number < 10) {
+            if (number == 0) {
+                number = num;
+                temp = "" + number;
+            }
+            else {
+                temp = "" + number;
+                number = num;
+                temp += number;
+            }
+            number = Integer.parseInt(temp);
+            numberOutWrite.setText(temp);
+        }
+        else {
+            System.out.println("Túl nagy számot próbál megadni.");
+        }
     }
     
     public void handleButtonFunction(String foodName, int foodPrice) {
@@ -404,9 +566,8 @@ public class FXMLController implements Initializable {
         indexOfTable = 0;
         tableEquals = false;
         foodEquals = false;
+        numberOutWrite.setText("");
         //tableTemp = null;
         //tempFood = null;
     }
-    
-    
 }

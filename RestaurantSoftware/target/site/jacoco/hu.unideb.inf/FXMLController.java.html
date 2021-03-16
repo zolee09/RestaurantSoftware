@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FXMLController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RestaurantSoftware</a> &gt; <a href="index.source.html" class="el_package">hu.unideb.inf</a> &gt; <span class="el_source">FXMLController.java</span></div><h1>FXMLController.java</h1><pre class="source lang-java linenums">
 package hu.unideb.inf;
 
+import com.sun.source.doctree.SinceTree;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.net.URL;
@@ -8,27 +9,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-<span class="nc" id="L22">public class FXMLController implements Initializable {</span>
+<span class="nc" id="L21">public class FXMLController implements Initializable {</span>
     
     private int index;
     private int number;
     private int indexOfTable;
     private int indexOfFood;
     private int currentTable;
-<span class="nc" id="L29">    private boolean tableEquals = false;</span>
-<span class="nc" id="L30">    private boolean foodEquals = false;</span>
-<span class="nc" id="L31">    List&lt;Table&gt; table = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L28">    private boolean changeButtonPushed = false;</span>
+<span class="nc" id="L29">    private boolean changeButtonDeletePushed = false;</span>
+<span class="nc" id="L30">    private boolean tableEquals = false;</span>
+<span class="nc" id="L31">    private boolean foodEquals = false;</span>
+<span class="nc" id="L32">    List&lt;Table&gt; table = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L33">    List&lt;Food&gt; changedFood = new ArrayList&lt;&gt;();</span>
+    
     
 
     @FXML
@@ -37,8 +40,6 @@ import javafx.scene.layout.AnchorPane;
     private Label orderLabel;
     @FXML
     private Label tableOutWrite;
-    @FXML
-    private ScrollPane scrollText;
     @FXML
     private Button button0;
     @FXML
@@ -57,357 +58,517 @@ import javafx.scene.layout.AnchorPane;
     private Button orderButton;
     @FXML
     private Button changer;
-   
+    @FXML
+    private Label numberOutWrite;
+    @FXML
+    private TextField nameInput;
+    @FXML
+    private TextField priceInput;
+    @FXML
+    private Button changeButton00;
+    @FXML
+    private Button changeButton10;
+    @FXML
+    private Button changeButton20;
+    @FXML
+    private Button changeButton30;
+    @FXML
+    private Button changeButton01;
+    @FXML
+    private Button changeButton11;
+    @FXML
+    private Button changeButton21;
+    @FXML
+    private Button changeButton31;
+    @FXML
+    private Button changeButtonDelete;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-<span class="nc" id="L64">    }    </span>
+<span class="nc" id="L89">    }    </span>
     
     @FXML
     private void handleButton00Action(ActionEvent event) {
-<span class="nc" id="L68">        handleButtonFunction(&quot;Húsleves&quot;, 799);</span>
-<span class="nc" id="L69">    }</span>
+<span class="nc" id="L93">        handleButtonFunction(&quot;Húsleves&quot;, 799);</span>
+<span class="nc" id="L94">    }</span>
     
     @FXML
     private void handleButton01Action(ActionEvent event) {
-<span class="nc" id="L73">        handleButtonFunction(&quot;Bableves&quot;, 699);</span>
-<span class="nc" id="L74">    }</span>
-
-    @FXML
-    private void handleButton02Action(ActionEvent event) {
-<span class="nc" id="L78">        handleButtonFunction(&quot;Gyümölcsleves&quot;, 599);</span>
-<span class="nc" id="L79">    }</span>
-
-    @FXML
-    private void handleButton03Action(ActionEvent event) {
-<span class="nc" id="L83">        handleButtonFunction(&quot;Paradicsomleves&quot;, 499);</span>
-<span class="nc" id="L84">    }</span>
-
-    @FXML
-    private void handleButton10Action(ActionEvent event) {
-<span class="nc" id="L88">        handleButtonFunction(&quot;Marhapörkölt&quot;, 999);</span>
-<span class="nc" id="L89">    }</span>
-
-    @FXML
-    private void handleButton11Action(ActionEvent event) {
-<span class="nc" id="L93">        handleButtonFunction(&quot;Túróstészta&quot;, 599);</span>
-<span class="nc" id="L94">    }</span>
-
-    @FXML
-    private void handleButton12Action(ActionEvent event) {
-<span class="nc" id="L98">        handleButtonFunction(&quot;Töltöttkáposzta&quot;, 799);</span>
+<span class="nc" id="L98">        handleButtonFunction(&quot;Bableves&quot;, 699);</span>
 <span class="nc" id="L99">    }</span>
 
     @FXML
-    private void handleButton13Action(ActionEvent event) {
-<span class="nc" id="L103">        handleButtonFunction(&quot;Rántotthús&quot;, 499);</span>
+    private void handleButton02Action(ActionEvent event) {
+<span class="nc" id="L103">        handleButtonFunction(&quot;Gyümölcsleves&quot;, 599);</span>
 <span class="nc" id="L104">    }</span>
 
     @FXML
-    private void handleButton20Action(ActionEvent event) {
-<span class="nc" id="L108">        handleButtonFunction(&quot;Palacsinta&quot;, 299);</span>
+    private void handleButton03Action(ActionEvent event) {
+<span class="nc" id="L108">        handleButtonFunction(&quot;Paradicsomleves&quot;, 499);</span>
 <span class="nc" id="L109">    }</span>
 
     @FXML
-    private void handleButton21Action(ActionEvent event) {
-<span class="nc" id="L113">        handleButtonFunction(&quot;Mákosguba&quot;, 399);</span>
+    private void handleButton10Action(ActionEvent event) {
+<span class="nc" id="L113">        handleButtonFunction(&quot;Marhapörkölt&quot;, 999);</span>
 <span class="nc" id="L114">    }</span>
 
     @FXML
-    private void handleButton22Action(ActionEvent event) {
-<span class="nc" id="L118">        handleButtonFunction(&quot;Aranygaluska&quot;, 499);</span>
+    private void handleButton11Action(ActionEvent event) {
+<span class="nc" id="L118">        handleButtonFunction(&quot;Túróstészta&quot;, 599);</span>
 <span class="nc" id="L119">    }</span>
 
     @FXML
-    private void handleButton23Action(ActionEvent event) {
-<span class="nc" id="L123">        handleButtonFunction(&quot;Csokitorta&quot;, 299);</span>
+    private void handleButton12Action(ActionEvent event) {
+<span class="nc" id="L123">        handleButtonFunction(&quot;Töltöttkáposzta&quot;, 799);</span>
 <span class="nc" id="L124">    }</span>
 
     @FXML
-    private void handleButton30Action(ActionEvent event) {
-<span class="nc" id="L128">        handleButtonFunction(&quot;Coca-cola&quot;, 299);</span>
+    private void handleButton13Action(ActionEvent event) {
+<span class="nc" id="L128">        handleButtonFunction(&quot;Rántotthús&quot;, 499);</span>
 <span class="nc" id="L129">    }</span>
 
     @FXML
-    private void handleButton31Action(ActionEvent event) {
-<span class="nc" id="L133">        handleButtonFunction(&quot;Pepsi&quot;, 299);</span>
+    private void handleButton20Action(ActionEvent event) {
+<span class="nc" id="L133">        handleButtonFunction(&quot;Palacsinta&quot;, 299);</span>
 <span class="nc" id="L134">    }</span>
 
     @FXML
-    private void handleButton32Action(ActionEvent event) {
-<span class="nc" id="L138">        handleButtonFunction(&quot;Ásványvíz&quot;, 199);</span>
+    private void handleButton21Action(ActionEvent event) {
+<span class="nc" id="L138">        handleButtonFunction(&quot;Mákosguba&quot;, 399);</span>
 <span class="nc" id="L139">    }</span>
 
     @FXML
-    private void handleButton33Action(ActionEvent event) {
-<span class="nc" id="L143">        handleButtonFunction(&quot;Zöldtea&quot;, 299);</span>
+    private void handleButton22Action(ActionEvent event) {
+<span class="nc" id="L143">        handleButtonFunction(&quot;Aranygaluska&quot;, 499);</span>
 <span class="nc" id="L144">    }</span>
+
+    @FXML
+    private void handleButton23Action(ActionEvent event) {
+<span class="nc" id="L148">        handleButtonFunction(&quot;Csokitorta&quot;, 299);</span>
+<span class="nc" id="L149">    }</span>
+
+    @FXML
+    private void handleButton30Action(ActionEvent event) {
+<span class="nc" id="L153">        handleButtonFunction(&quot;Coca-cola&quot;, 299);</span>
+<span class="nc" id="L154">    }</span>
+
+    @FXML
+    private void handleButton31Action(ActionEvent event) {
+<span class="nc" id="L158">        handleButtonFunction(&quot;Pepsi&quot;, 299);</span>
+<span class="nc" id="L159">    }</span>
+
+    @FXML
+    private void handleButton32Action(ActionEvent event) {
+<span class="nc" id="L163">        handleButtonFunction(&quot;Ásványvíz&quot;, 199);</span>
+<span class="nc" id="L164">    }</span>
+
+    @FXML
+    private void handleButton33Action(ActionEvent event) {
+<span class="nc" id="L168">        handleButtonFunction(&quot;Zöldtea&quot;, 299);</span>
+<span class="nc" id="L169">    }</span>
     
     @FXML
     private void changeButton00(ActionEvent event) {
-        
-<span class="nc" id="L149">    }</span>
+<span class="nc" id="L173">        int changeButtonNumber = 0;</span>
+<span class="nc bnc" id="L174" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L175">            changeButton00.setText(&quot;&quot;);</span>
+<span class="nc" id="L176">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L177">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L180">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L182">                changeButton00.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L185">    }</span>
     @FXML
     private void changeButton01(ActionEvent event) {
-        
-<span class="nc" id="L153">    }</span>
+<span class="nc" id="L188">        int changeButtonNumber = 1;</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L190">            changeButton01.setText(&quot;&quot;);</span>
+<span class="nc" id="L191">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L192">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L195">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L196" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L197">                changeButton01.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L200">    }</span>
     @FXML
     private void changeButton10(ActionEvent event) {
-        
-<span class="nc" id="L157">    }</span>
+<span class="nc" id="L203">        int changeButtonNumber = 2;</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L205">            changeButton10.setText(&quot;&quot;);</span>
+<span class="nc" id="L206">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L207">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L210">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L211" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L212">                changeButton10.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L215">    }</span>
     @FXML
     private void changeButton11(ActionEvent event) {
-        
-<span class="nc" id="L161">    }</span>
+<span class="nc" id="L218">        int changeButtonNumber = 3;</span>
+<span class="nc bnc" id="L219" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L220">            changeButton11.setText(&quot;&quot;);</span>
+<span class="nc" id="L221">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L222">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L225">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L226" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L227">                changeButton11.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L230">    }</span>
     @FXML
     private void changeButton20(ActionEvent event) {
-        
-<span class="nc" id="L165">    }</span>
+<span class="nc" id="L233">        int changeButtonNumber = 4;</span>
+<span class="nc bnc" id="L234" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L235">            changeButton20.setText(&quot;&quot;);</span>
+<span class="nc" id="L236">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L237">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L240">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L241" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L242">                changeButton20.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L245">    }</span>
     @FXML
     private void changeButton21(ActionEvent event) {
-        
-<span class="nc" id="L169">    }</span>
+<span class="nc" id="L248">        int changeButtonNumber = 5;</span>
+<span class="nc bnc" id="L249" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L250">            changeButton21.setText(&quot;&quot;);</span>
+<span class="nc" id="L251">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L252">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L255">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L256" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L257">                changeButton21.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L260">    }</span>
     @FXML
     private void changeButton30(ActionEvent event) {
-        
-<span class="nc" id="L173">    }</span>
+<span class="nc" id="L263">        int changeButtonNumber = 6;</span>
+<span class="nc bnc" id="L264" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L265">            changeButton30.setText(&quot;&quot;);</span>
+<span class="nc" id="L266">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L267">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L270">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L271" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L272">                changeButton30.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L275">    }</span>
     @FXML
     private void changeButton31(ActionEvent event) {
-        
-<span class="nc" id="L177">    }</span>
+<span class="nc" id="L278">        int changeButtonNumber = 7;</span>
+<span class="nc bnc" id="L279" title="All 2 branches missed.">        if (changeButtonDeletePushed) {</span>
+<span class="nc" id="L280">            changeButton31.setText(&quot;&quot;);</span>
+<span class="nc" id="L281">            changedFood.get(changeButtonNumber).setQuantity(0);</span>
+<span class="nc" id="L282">            changeButtonDeletePushed = false;</span>
+        }
+        else {
+<span class="nc" id="L285">            changeButtonFunction(changeButtonNumber);</span>
+<span class="nc bnc" id="L286" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L287">                changeButton31.setText(changedFood.get(changeButtonNumber).getName());</span>
+            }
+        }
+<span class="nc" id="L290">    }</span>
 
     @FXML
     private void handleButtonNumber7Action(ActionEvent event) {
-<span class="nc" id="L181">        number = 7;</span>
-<span class="nc" id="L182">        System.out.println(number);</span>
-<span class="nc" id="L183">    }</span>
+<span class="nc" id="L294">        numberButtonFunction(7);</span>
+<span class="nc" id="L295">    }</span>
 
     @FXML
     public void handleButtonNumber4Action(ActionEvent event) {
-<span class="nc" id="L187">        number = 4;</span>
-<span class="nc" id="L188">        System.out.println(number);</span>
-<span class="nc" id="L189">    }</span>
+<span class="nc" id="L299">        numberButtonFunction(4);</span>
+<span class="nc" id="L300">    }</span>
 
     @FXML
     private void handleButtonNumber1Action(ActionEvent event) {
-<span class="nc" id="L193">        number = 1;</span>
-<span class="nc" id="L194">        System.out.println(number);</span>
-<span class="nc" id="L195">    }</span>
+<span class="nc" id="L304">        numberButtonFunction(1);</span>
+<span class="nc" id="L305">    }</span>
 
     @FXML
     private void handleButtonNumber8Action(ActionEvent event) {
-<span class="nc" id="L199">        number = 8;</span>
-<span class="nc" id="L200">        System.out.println(number);</span>
-<span class="nc" id="L201">    }</span>
+<span class="nc" id="L309">        numberButtonFunction(8);</span>
+<span class="nc" id="L310">    }</span>
 
     @FXML
     private void handleButtonNumber5Action(ActionEvent event) {
-<span class="nc" id="L205">        number = 5;</span>
-<span class="nc" id="L206">        System.out.println(number);</span>
-<span class="nc" id="L207">    }</span>
+<span class="nc" id="L314">        numberButtonFunction(5);</span>
+<span class="nc" id="L315">    }</span>
 
     @FXML
     private void handleButtonNumber2Action(ActionEvent event) {
-<span class="nc" id="L211">        number = 2;</span>
-<span class="nc" id="L212">        System.out.println(number);</span>
-<span class="nc" id="L213">    }</span>
+<span class="nc" id="L319">        numberButtonFunction(2);</span>
+<span class="nc" id="L320">    }</span>
     
     @FXML
     private void handleButtonNumber9Action(ActionEvent event) {
-<span class="nc" id="L217">        number = 9;</span>
-<span class="nc" id="L218">        System.out.println(number);</span>
-<span class="nc" id="L219">    }</span>
+<span class="nc" id="L324">        numberButtonFunction(9);</span>
+<span class="nc" id="L325">    }</span>
 
     @FXML
     private void handleButtonNumber6Action(ActionEvent event) {
-<span class="nc" id="L223">        number = 6;</span>
-<span class="nc" id="L224">        System.out.println(number);</span>
-<span class="nc" id="L225">    }</span>
+<span class="nc" id="L329">        numberButtonFunction(6);</span>
+<span class="nc" id="L330">    }</span>
 
     @FXML
     private void handleButtonNumber3Action(ActionEvent event) {
-<span class="nc" id="L229">        number = 3;</span>
-<span class="nc" id="L230">        System.out.println(number);</span>
-<span class="nc" id="L231">    }</span>
+<span class="nc" id="L334">        numberButtonFunction(3);</span>
+<span class="nc" id="L335">    }</span>
 
     @FXML
     private void handleButtonNumber0Action(ActionEvent event) {
-<span class="nc" id="L235">        number = 0;</span>
-<span class="nc" id="L236">        System.out.println(number);</span>
-<span class="nc" id="L237">    }</span>
+<span class="nc" id="L339">        numberButtonFunction(0);</span>
+<span class="nc" id="L340">    }</span>
 
     @FXML
     private void handleButtonPayAction(ActionEvent event) {
-<span class="nc bnc" id="L241" title="All 2 branches missed.">        if (table.get(index) != null) {</span>
+<span class="nc bnc" id="L344" title="All 2 branches missed.">        if (table.get(index) != null) {</span>
             
             //végösszeget kiszámolni
-<span class="nc" id="L244">            int sum = 0;</span>
-<span class="nc bnc" id="L245" title="All 2 branches missed.">            for (Food food : table.get(index).foods) {</span>
-<span class="nc" id="L246">                sum += food.getQuantity()*food.getPrice();</span>
-<span class="nc" id="L247">            }</span>
+<span class="nc" id="L347">            int sum = 0;</span>
+<span class="nc bnc" id="L348" title="All 2 branches missed.">            for (Food food : table.get(index).foods) {</span>
+<span class="nc" id="L349">                sum += food.getQuantity()*food.getPrice();</span>
+<span class="nc" id="L350">            }</span>
             
             //fájlba kiírni
             
-<span class="nc" id="L251">            try (PrintStream ps = new PrintStream(&quot;elszamolas.txt&quot;)){</span>
-<span class="nc" id="L252">                String csg = &quot;A(z) &quot; + currentTable + &quot;. számú asztal számlája\n&quot;;</span>
-<span class="nc" id="L253">                ps.append(csg);</span>
-<span class="nc bnc" id="L254" title="All 2 branches missed.">                for (Food food : table.get(index).foods) {</span>
-<span class="nc" id="L255">                    csg = food.toString() + &quot;\n&quot;;</span>
-<span class="nc" id="L256">                    ps.append(csg);</span>
-<span class="nc" id="L257">                }</span>
-<span class="nc" id="L258">                csg = &quot;\nVégösszeg: &quot; + sum + &quot;\n&quot;;</span>
-<span class="nc" id="L259">                ps.append(csg);</span>
-<span class="nc" id="L260">            } catch (FileNotFoundException ex) {</span>
-<span class="nc" id="L261">                System.err.println(&quot;Hiba az állomány megnyitásakor: &quot; + ex.getMessage());</span>
-<span class="nc" id="L262">                System.exit(1);</span>
-<span class="nc" id="L263">            }</span>
+<span class="nc" id="L354">            try (PrintStream ps = new PrintStream(&quot;elszamolas.txt&quot;)){</span>
+<span class="nc" id="L355">                String csg = &quot;A(z) &quot; + currentTable + &quot;. számú asztal számlája\n&quot;;</span>
+<span class="nc" id="L356">                ps.append(csg);</span>
+<span class="nc bnc" id="L357" title="All 2 branches missed.">                for (Food food : table.get(index).foods) {</span>
+<span class="nc" id="L358">                    csg = food.toString() + &quot;\n&quot;;</span>
+<span class="nc" id="L359">                    ps.append(csg);</span>
+<span class="nc" id="L360">                }</span>
+<span class="nc" id="L361">                csg = &quot;\nVégösszeg: &quot; + sum + &quot;\n&quot;;</span>
+<span class="nc" id="L362">                ps.append(csg);</span>
+<span class="nc" id="L363">            } catch (FileNotFoundException ex) {</span>
+<span class="nc" id="L364">                System.err.println(&quot;Hiba az állomány megnyitásakor: &quot; + ex.getMessage());</span>
+<span class="nc" id="L365">                System.exit(1);</span>
+<span class="nc" id="L366">            }</span>
             
             //alarm ablakba kiírni a tételeket
-<span class="nc" id="L266">            Alert alert = new Alert(AlertType.INFORMATION);</span>
-<span class="nc" id="L267">            alert.setTitle(&quot;Fizetés&quot;);</span>
-<span class="nc" id="L268">            alert.setHeaderText(&quot;A(z) &quot; + currentTable + &quot;. számú asztal\n\nA fizetendő összeg: &quot; + sum + &quot; forint!&quot;);</span>
-<span class="nc" id="L269">            alert.setContentText(&quot;Köszönjük, hogy nálunk vásárolt!\n\nJó étvágyat kívánunk!&quot;);</span>
-<span class="nc" id="L270">            alert.showAndWait();</span>
+<span class="nc" id="L369">            Alert alert = new Alert(AlertType.INFORMATION);</span>
+<span class="nc" id="L370">            alert.setTitle(&quot;Fizetés&quot;);</span>
+<span class="nc" id="L371">            alert.setHeaderText(&quot;A(z) &quot; + currentTable + &quot;. számú asztal\n\nA fizetendő összeg: &quot; + sum + &quot; forint!&quot;);</span>
+<span class="nc" id="L372">            alert.setContentText(&quot;Köszönjük, hogy nálunk vásárolt!\n\nJó étvágyat kívánunk!&quot;);</span>
+<span class="nc" id="L373">            alert.showAndWait();</span>
 
-<span class="nc" id="L272">            table.remove(index);</span>
-<span class="nc" id="L273">            orderLabel.setText(&quot;&quot;);</span>
-<span class="nc" id="L274">            currentTable = 0;</span>
+<span class="nc" id="L375">            table.remove(index);</span>
+<span class="nc" id="L376">            orderLabel.setText(&quot;&quot;);</span>
+<span class="nc" id="L377">            currentTable = 0;</span>
         }
-<span class="nc" id="L276">    }</span>
+<span class="nc" id="L379">    }</span>
     
     @FXML
     private void handleButtonDeleteAction(ActionEvent event) {
-<span class="nc bnc" id="L280" title="All 2 branches missed.">        if (table.get(index).foods.size() &gt; 0) {</span>
-<span class="nc bnc" id="L281" title="All 2 branches missed.">            if (number == 0){</span>
-<span class="nc" id="L282">                table.get(index).foods.remove(table.get(index).foods.size()-1);</span>
+<span class="nc bnc" id="L383" title="All 2 branches missed.">        if (table.get(index).foods.size() &gt; 0) {</span>
+<span class="nc bnc" id="L384" title="All 2 branches missed.">            if (number == 0){</span>
+<span class="nc" id="L385">                table.get(index).foods.remove(table.get(index).foods.size()-1);</span>
             } else {
-<span class="nc" id="L284">                number = 0;</span>
+<span class="nc" id="L387">                numberOutWrite.setText(&quot;&quot;);</span>
+<span class="nc" id="L388">                number = 0;</span>
             }
-<span class="nc" id="L286">            orderLabel.setText(table.get(index).toString());</span>
+<span class="nc" id="L390">            orderLabel.setText(table.get(index).toString());</span>
         }
-<span class="nc" id="L288">    }</span>
+<span class="nc" id="L392">    }</span>
     
     @FXML
     private void handleButtonOrderAction(ActionEvent event) {
-<span class="nc" id="L292">        orderLabel.setText(&quot;&quot;);</span>
-<span class="nc" id="L293">        tableOutWrite.setText(&quot;&quot; + number);</span>
-<span class="nc" id="L294">        currentTable = number;</span>
+<span class="nc" id="L396">        orderLabel.setText(&quot;&quot;);</span>
+<span class="nc" id="L397">        tableOutWrite.setText(&quot;&quot; + number);</span>
+<span class="nc" id="L398">        currentTable = number;</span>
         
         //ha nem volt egy asztal sem létrehozunk egy 0-s asztalt
-<span class="nc bnc" id="L297" title="All 2 branches missed.">        if (table.size() == 0) {</span>
+<span class="nc bnc" id="L401" title="All 2 branches missed.">        if (table.size() == 0) {</span>
             //food.add(new Food());
-<span class="nc" id="L299">            Table tb = new Table(0);</span>
-<span class="nc" id="L300">            table.add(tb);</span>
-<span class="nc" id="L301">        }</span>
+<span class="nc" id="L403">            Table tb = new Table(0);</span>
+<span class="nc" id="L404">            table.add(tb);</span>
+<span class="nc" id="L405">        }</span>
         else {
-<span class="nc" id="L303">            index = table.size();</span>
+<span class="nc" id="L407">            index = table.size();</span>
             //körbejárjuk az asztalokat
-<span class="nc bnc" id="L305" title="All 2 branches missed.">            for (Table tb : table) {</span>
+<span class="nc bnc" id="L409" title="All 2 branches missed.">            for (Table tb : table) {</span>
                 //ha találunk egyező asztalt
-<span class="nc bnc" id="L307" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
-<span class="nc" id="L308">                    index = table.indexOf(tb);</span>
-<span class="nc" id="L309">                    orderLabel.setText(table.get(index).toString());</span>
+<span class="nc bnc" id="L411" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
+<span class="nc" id="L412">                    index = table.indexOf(tb);</span>
+<span class="nc" id="L413">                    orderLabel.setText(table.get(index).toString());</span>
                 }
-<span class="nc" id="L311">            }</span>
+<span class="nc" id="L415">            }</span>
         }
-<span class="nc" id="L313">        number = 0;</span>
-<span class="nc" id="L314">    }</span>
+<span class="nc" id="L417">        numberOutWrite.setText(&quot;&quot;);</span>
+<span class="nc" id="L418">        number = 0;</span>
+<span class="nc" id="L419">    }</span>
     
     @FXML
     private void changerButton (ActionEvent event) {
+<span class="nc bnc" id="L423" title="All 2 branches missed.">        if (changedFood.isEmpty()) {</span>
+<span class="nc bnc" id="L424" title="All 2 branches missed.">            for (int i = 0; i &lt; 8; i++) {</span>
+<span class="nc" id="L425">                changedFood.add(new Food(0, &quot;&quot;, 0));</span>
+            }
+        }
+<span class="nc" id="L428">        changeButtonPushed = true;</span>
+<span class="nc" id="L429">    }</span>
+    
+    @FXML
+    private void changeButtonDelete(ActionEvent event) {
+<span class="nc" id="L433">        changeButtonDeletePushed = true;</span>
+<span class="nc" id="L434">    }</span>
+    
+    public void changeButtonFunction (int changeButtonNumber) {
+        //ha a módosító gomb le van nyomva
+<span class="nc bnc" id="L438" title="All 2 branches missed.">        if (changeButtonPushed) {</span>
+            //ha nem üresek az input mezők
+<span class="nc bnc" id="L440" title="All 4 branches missed.">            if (!nameInput.getText().isEmpty() &amp;&amp; !priceInput.getText().isEmpty()) {</span>
+<span class="nc" id="L441">                String name = nameInput.getText();</span>
+<span class="nc" id="L442">                int price = Integer.parseInt(priceInput.getText());</span>
+<span class="nc" id="L443">                Food temp = new Food(1, name, price);</span>
+                //kicseréljük a már létrehozott lista adott elemét
+<span class="nc" id="L445">                changedFood.set(changeButtonNumber, temp);</span>
+<span class="nc" id="L446">                System.out.println(changedFood.get(changeButtonNumber).toString());</span>
+<span class="nc" id="L447">            }</span>
+            else {
+<span class="nc" id="L449">                System.out.println(&quot;Adjon meg értéket mindkét helyre&quot;);</span>
+            }
+<span class="nc" id="L451">            nameInput.setText(&quot;&quot;);</span>
+<span class="nc" id="L452">            priceInput.setText(&quot;&quot;);</span>
+<span class="nc" id="L453">            changeButtonPushed = false;</span>
+        }
+        else {
+<span class="nc bnc" id="L456" title="All 2 branches missed.">            if (changedFood.get(changeButtonNumber).getQuantity() != 0) {</span>
+<span class="nc" id="L457">                handleButtonFunction(changedFood.get(changeButtonNumber).getName(), changedFood.get(changeButtonNumber).getPrice());</span>
+            }
+        }
         
-<span class="nc" id="L319">    }</span>
+<span class="nc" id="L461">    }</span>
+    
+    public void numberButtonFunction(int num) {
+        String temp;
+<span class="nc bnc" id="L465" title="All 2 branches missed.">        if (number &lt; 10) {</span>
+<span class="nc bnc" id="L466" title="All 2 branches missed.">            if (number == 0) {</span>
+<span class="nc" id="L467">                number = num;</span>
+<span class="nc" id="L468">                temp = &quot;&quot; + number;</span>
+            }
+            else {
+<span class="nc" id="L471">                temp = &quot;&quot; + number;</span>
+<span class="nc" id="L472">                number = num;</span>
+<span class="nc" id="L473">                temp += number;</span>
+            }
+<span class="nc" id="L475">            number = Integer.parseInt(temp);</span>
+<span class="nc" id="L476">            numberOutWrite.setText(temp);</span>
+        }
+        else {
+<span class="nc" id="L479">            System.out.println(&quot;Túl nagy számot próbál megadni.&quot;);</span>
+        }
+<span class="nc" id="L481">    }</span>
     
     public void handleButtonFunction(String foodName, int foodPrice) {
         
-<span class="nc" id="L323">        int sum = 0;</span>
-<span class="nc" id="L324">        Food foodTemp = null;</span>
-<span class="nc" id="L325">        Table tableTemp = null;</span>
-<span class="nc" id="L326">        List&lt;Food&gt; food = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L327">        List&lt;Food&gt; tempFood = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L485">        int sum = 0;</span>
+<span class="nc" id="L486">        Food foodTemp = null;</span>
+<span class="nc" id="L487">        Table tableTemp = null;</span>
+<span class="nc" id="L488">        List&lt;Food&gt; food = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L489">        List&lt;Food&gt; tempFood = new ArrayList&lt;&gt;();</span>
         
         //ha nem választunk mennyiséget akkor automatikusan 1
-<span class="nc bnc" id="L330" title="All 2 branches missed.">        if (number == 0) number = 1;</span>
-<span class="nc" id="L331">        food.add(new Food(number, foodName, foodPrice));</span>
-<span class="nc" id="L332">        System.out.println(food.toString());</span>
+<span class="nc bnc" id="L492" title="All 2 branches missed.">        if (number == 0) number = 1;</span>
+<span class="nc" id="L493">        food.add(new Food(number, foodName, foodPrice));</span>
+<span class="nc" id="L494">        System.out.println(food.toString());</span>
         
         //ha nem volt egy asztal sem létrehozunk egyet
-<span class="nc bnc" id="L335" title="All 2 branches missed.">        if (table.size() == 0) {</span>
-<span class="nc" id="L336">            table.add(new Table(currentTable, food));</span>
+<span class="nc bnc" id="L497" title="All 2 branches missed.">        if (table.size() == 0) {</span>
+<span class="nc" id="L498">            table.add(new Table(currentTable, food));</span>
         } else {
-<span class="nc" id="L338">            indexOfTable = table.size();</span>
-<span class="nc bnc" id="L339" title="All 2 branches missed.">            for (Table tb : table) {</span>
+<span class="nc" id="L500">            indexOfTable = table.size();</span>
+<span class="nc bnc" id="L501" title="All 2 branches missed.">            for (Table tb : table) {</span>
                 //ha találunk egyező asztalt
-<span class="nc bnc" id="L341" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
-<span class="nc" id="L342">                    tableEquals = true;</span>
-<span class="nc" id="L343">                    indexOfTable = table.indexOf(tb);</span>
-<span class="nc" id="L344">                    tempFood = tb.getFoods();</span>
+<span class="nc bnc" id="L503" title="All 2 branches missed.">                if (tb.getTableNumber() == currentTable) {</span>
+<span class="nc" id="L504">                    tableEquals = true;</span>
+<span class="nc" id="L505">                    indexOfTable = table.indexOf(tb);</span>
+<span class="nc" id="L506">                    tempFood = tb.getFoods();</span>
                 }
-<span class="nc" id="L346">            }</span>
+<span class="nc" id="L508">            }</span>
             //ha már találtunk egyező asztalt (Asztal gombban kiértékelve)
-<span class="nc bnc" id="L348" title="All 2 branches missed.">            if (tableEquals) {</span>
+<span class="nc bnc" id="L510" title="All 2 branches missed.">            if (tableEquals) {</span>
                 //körbejárjuk az adott asztal ételeit
-<span class="nc bnc" id="L350" title="All 2 branches missed.">                for (Food foo : tempFood) {</span>
+<span class="nc bnc" id="L512" title="All 2 branches missed.">                for (Food foo : tempFood) {</span>
                     //megvizsgáljuk hogy volt e már rendelve a kért étel erre az asztalra
-<span class="nc bnc" id="L352" title="All 2 branches missed.">                    if (foo.getName().equals(foodName)) {</span>
-<span class="nc" id="L353">                        foodEquals = true;</span>
-<span class="nc" id="L354">                        indexOfFood = tempFood.indexOf(foo);</span>
+<span class="nc bnc" id="L514" title="All 2 branches missed.">                    if (foo.getName().equals(foodName)) {</span>
+<span class="nc" id="L515">                        foodEquals = true;</span>
+<span class="nc" id="L516">                        indexOfFood = tempFood.indexOf(foo);</span>
                         //másolatot készítünk az egyezett ételről
-<span class="nc" id="L356">                        foodTemp = foo;</span>
+<span class="nc" id="L518">                        foodTemp = foo;</span>
                     }
-<span class="nc" id="L358">                }</span>
+<span class="nc" id="L520">                }</span>
                 //ha volt már a listában a kért étel
-<span class="nc bnc" id="L360" title="All 2 branches missed.">                if (foodEquals) {</span>
+<span class="nc bnc" id="L522" title="All 2 branches missed.">                if (foodEquals) {</span>
                     //összegezzük a most kiválasztott mennyiségett az eddigi mennyiséggel
-<span class="nc" id="L362">                    sum = number + table.get(indexOfTable).getFoods().get(indexOfFood).getQuantity();</span>
+<span class="nc" id="L524">                    sum = number + table.get(indexOfTable).getFoods().get(indexOfFood).getQuantity();</span>
                     //lemásoljuk a kiválaszott ételt )előtte megtettük
                     //foodTemp = table.get(indexOfTable).getFoods().get(indexOfFood);
                     //eltávolítjuk a kiválasztott ételt egy ezelőtt használt étellista másolatból
-<span class="nc" id="L366">                    tempFood.remove(foodTemp);</span>
+<span class="nc" id="L528">                    tempFood.remove(foodTemp);</span>
                     //hozzáadjuk az ételt, az új darabértékkel ehhez a másolt listához
-<span class="nc" id="L368">                    tempFood.add(new Food(sum, foodName, foodPrice));</span>
+<span class="nc" id="L530">                    tempFood.add(new Food(sum, foodName, foodPrice));</span>
                     //készítünk egy asztal lista másolatot az adott asztalról
-<span class="nc" id="L370">                    tableTemp = table.get(indexOfTable);</span>
+<span class="nc" id="L532">                    tableTemp = table.get(indexOfTable);</span>
                     //eltávolítjuk ideiglenesen az adott asztalt
-<span class="nc" id="L372">                    table.remove(tableTemp);</span>
+<span class="nc" id="L534">                    table.remove(tableTemp);</span>
                     //készítünk egy új asztalt a meglévő asztalszámmal és az új étellistával
-<span class="nc" id="L374">                    tableTemp = new Table(currentTable, tempFood);</span>
+<span class="nc" id="L536">                    tableTemp = new Table(currentTable, tempFood);</span>
                     //hozzáadjuk az asztallistához az &quot;újraformázott&quot; asztalt
-<span class="nc" id="L376">                    table.add(tableTemp);</span>
+<span class="nc" id="L538">                    table.add(tableTemp);</span>
                 } else {
                     //ha nem volt étel egyezés
                     //hozzáadjuk az ételt, az új darabértékkel ehhez a másolt listához
-<span class="nc" id="L380">                    tempFood.add(new Food(number, foodName, foodPrice));</span>
+<span class="nc" id="L542">                    tempFood.add(new Food(number, foodName, foodPrice));</span>
                     //készítünk egy asztal lista másolatot az adott asztalról
-<span class="nc" id="L382">                    tableTemp = table.get(indexOfTable);</span>
+<span class="nc" id="L544">                    tableTemp = table.get(indexOfTable);</span>
                     //eltávolítjuk ideiglenesen az adott asztalt
-<span class="nc" id="L384">                    table.remove(tableTemp);</span>
+<span class="nc" id="L546">                    table.remove(tableTemp);</span>
                     //készítünk egy új asztalt a meglévő asztalszámmal és az új étellistával
-<span class="nc" id="L386">                    tableTemp = new Table(currentTable, tempFood);</span>
+<span class="nc" id="L548">                    tableTemp = new Table(currentTable, tempFood);</span>
                     //hozzáadjuk az asztallistához az &quot;újraformázott&quot; asztalt
-<span class="nc" id="L388">                    table.add(tableTemp);</span>
+<span class="nc" id="L550">                    table.add(tableTemp);</span>
                 }
             } else {
                 //ha nem volt asztal egyezés létrehozunk egy új asztalt a megadott étellel
-<span class="nc" id="L392">                table.add(new Table(currentTable, food));</span>
+<span class="nc" id="L554">                table.add(new Table(currentTable, food));</span>
             }
         }
         
         //Megjelenítés
-<span class="nc" id="L397">        orderLabel.setText(table.get(indexOfTable).toString());</span>
-<span class="nc" id="L398">        System.out.println(table.get(indexOfTable).toString());</span>
+<span class="nc" id="L559">        orderLabel.setText(table.get(indexOfTable).toString());</span>
+<span class="nc" id="L560">        System.out.println(table.get(indexOfTable).toString());</span>
         
         //mindent lenullázunk
-<span class="nc" id="L401">        number = 0;</span>
-<span class="nc" id="L402">        indexOfTable = 0;</span>
-<span class="nc" id="L403">        indexOfFood = 0;</span>
-<span class="nc" id="L404">        indexOfTable = 0;</span>
-<span class="nc" id="L405">        tableEquals = false;</span>
-<span class="nc" id="L406">        foodEquals = false;</span>
+<span class="nc" id="L563">        number = 0;</span>
+<span class="nc" id="L564">        indexOfTable = 0;</span>
+<span class="nc" id="L565">        indexOfFood = 0;</span>
+<span class="nc" id="L566">        indexOfTable = 0;</span>
+<span class="nc" id="L567">        tableEquals = false;</span>
+<span class="nc" id="L568">        foodEquals = false;</span>
+<span class="nc" id="L569">        numberOutWrite.setText(&quot;&quot;);</span>
         //tableTemp = null;
         //tempFood = null;
-<span class="nc" id="L409">    }</span>
-    
-    
+<span class="nc" id="L572">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
