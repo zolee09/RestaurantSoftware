@@ -55,6 +55,8 @@ public class FXMLController implements Initializable {
     private Button deleteButton;
     @FXML
     private Button orderButton;
+    @FXML
+    private Button changer;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -139,6 +141,39 @@ public class FXMLController implements Initializable {
     @FXML
     private void handleButton33Action(ActionEvent event) {
         handleButtonFunction("Zöldtea", 299);
+    }
+    
+    @FXML
+    private void changeButton00(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton01(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton10(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton11(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton20(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton21(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton30(ActionEvent event) {
+        
+    }
+    @FXML
+    private void changeButton31(ActionEvent event) {
+        
     }
 
     @FXML
@@ -277,6 +312,12 @@ public class FXMLController implements Initializable {
         }
         number = 0;
     }
+    
+    @FXML
+    private void changerButton (ActionEvent event) {
+        
+    }
+    
     public void handleButtonFunction(String foodName, int foodPrice) {
         
         int sum = 0;
