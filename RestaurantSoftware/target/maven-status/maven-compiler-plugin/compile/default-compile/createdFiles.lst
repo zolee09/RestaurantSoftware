@@ -1,5 +1,10 @@
+hu\unideb\inf\PersistentInputStream.class
 hu\unideb\inf\Table.class
+hu\unideb\inf\PersistentOutputStream.class
 hu\unideb\inf\MainApp.class
+hu\unideb\inf\Persistent.class
 hu\unideb\inf\FoodDataReader.class
 hu\unideb\inf\Food.class
+hu\unideb\inf\PersistentInput.class
+hu\unideb\inf\PersistentOutput.class
 hu\unideb\inf\FXMLController.class
