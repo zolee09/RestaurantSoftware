@@ -1,5 +1,6 @@
-A(z) 7. számú asztal számlája
-1 x Aranygaluska, 499Ft
-1 x Mákosguba, 399Ft
+A(z) 5. számú asztal számlája
+2 x Pepsi, 299Ft
+3 x Coca-cola, 299Ft
+4 x kokas, 201Ft
 
-Végösszeg: 898
+Végösszeg: 2299

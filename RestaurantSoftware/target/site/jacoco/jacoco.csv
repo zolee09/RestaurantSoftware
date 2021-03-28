@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-RestaurantSoftware,hu.unideb.inf,Food,3,57,0,0,2,19,1,9,1,9
+RestaurantSoftware,hu.unideb.inf,Food,34,75,0,0,10,25,2,11,2,11
 RestaurantSoftware,hu.unideb.inf,FXMLController,1118,0,80,0,263,0,84,0,44,0
 RestaurantSoftware,hu.unideb.inf,PersistentInputStream,50,0,2,0,16,0,3,0,2,0
 RestaurantSoftware,hu.unideb.inf,MainApp,32,0,0,0,10,0,3,0,3,0
-RestaurantSoftware,hu.unideb.inf,Table,12,64,0,2,5,12,2,6,2,5
+RestaurantSoftware,hu.unideb.inf,Table,56,70,4,2,17,13,7,7,5,6
 RestaurantSoftware,hu.unideb.inf,PersistentOutputStream,19,0,2,0,7,0,3,0,2,0
